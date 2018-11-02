@@ -18,7 +18,7 @@ class List extends Component {
              <ul className='listDis'>
                 {
                 filteredContacts
-                .sort((a,b) => a.name > b.name ? this.props.values.statusF : this.props.values.statusS)
+                .sort((a,b) => a.name.charCodeAt(0) > b.name.charCodeAt(0) ? this.props.values.statusF : this.props.values.statusS)
                 .map((el,id)=>{
                     return <li key={id} id={el.id}>{el.name} {el.surname} {el.phone}<button className='delBut' onClick={this.props.deleteIt.bind(this,el.id)}>X</button></li>
                 })}
